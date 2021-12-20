@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript 기본 1</title>
+    <style>
+
+    </style>
+    <script>
+        // 전체 html문서에 적용하고싶을때 head에 선언
+        var text1 = "자바스크립트의 세상에 오신 것을 환영합니다~~~"
+        var text2 = "자바스크립트 프로그래밍을 즐기도록 합시다!!!"
+        function welcome(target){
+            document.write(target);
+        }
+    </script>
+</head>
+<!--
+자바스크립트를 작성하는 방법
+-1. 내부 자바스크립트 작성법 -- 가장 많이 사용
+-2. 외부 자바스크립트 작성법 -- 실무용으로 추천
+-3. 인라인 자바스크립트 작성법 -- 간편하게 작성가능
+-->
+<body>
+    <h3>1. 내부 자바스크립트 작성</h3>
+    <script>
+        //body영역에 적는 경우 - 상황에 따라 바로바로 적용 결과를 확인하고 싶은 경우
+        document.write('welcome to Javascript<br>');
+        document.write('Enjoy Javascript Programming<br>')
+    </script>
+    <hr>
+    <h3>내부 자바스크립트 작성(2)</h3>
+    <script>
+        welcome(text1);
+        welcome(text2);
+    </script>
+</body>
+</html>

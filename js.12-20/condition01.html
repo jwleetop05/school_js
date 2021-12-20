@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>조건문 연습</title>
+</head>
+<body>
+    <h3>조건문 연습</h3>
+    <script>
+        var score = Number(prompt("자바스크립트를 정수를 입력해 주세요."));
+        // if문 : 조건이 한개일때
+        // 문제) score이 80점 미만일때, 아래의 메세지를 출력하고 , 종료하시오
+        // 추가과제를 부여합니다, 내일까지 과제를 제출해 주세요
+        // 수업을종료합니다
+        // if(score >= 80){
+        //     alert("수업을 종료합니다")
+        // }
+        // if(score < 80){
+        //     alert("추과과제를 부여합니다.\n내일까지 과제를 제출해 주세요")
+        //     alert("수업을 종료합니다")
+        // }
+
+        //2. if ~ else문 : 조건이 두개일때
+        //문제) score가 80점 이상일때는 합격입니다. 추가과제는 없습니다
+        //      score가 80점 미만일때는 불합격입니다. 추가과제가 있습니다
+        // if(score>=80){
+        //     alert("합격입니다.\n추가과제는없습니다");
+        // }else{
+        //     alert("불합격입니다.\n추가과제가 있습니다.")
+        // }
+        //3. if ~ else if ~ ~ else문 : 조건이 3개이상일때
+        //문제) score 90점 이상일 때는 A학점
+        //score 90점 이상일 때는 A학점
+        // score 80점 이상일 때는 B학점
+        // score 70점 이상일 때는 C학점
+        // score 60점 이상일 때는 D학점
+        // score 60점 미만일 때는 F학점
+        // 결과화면) 당신의 점수는 93이고, 학점은 A입니다.
+        // if(score>=90){
+        //     alert("당신의 점수는" + score + "점이고, A학점입니다")
+        // }else if(score>=80){
+        //     alert("당신의 점수는" + score + "점이고, B학점입니다")
+        // }else if(score>=70){
+        //     alert("당신의 점수는" + score + "점이고, C학점입니다")
+        // }else if(score>=60){
+        //     alert("당신의 점수는" + score + "점이고, D학점입니다")
+        // }else{
+        //     alert("당신의 점수는" + score + "점이고, F학점입니다")
+        // }
+        //4.switch ~ case 문 : 조건의 가지수가 많을때 사용하면 좋다
+        //3번문제를 스위치케이스문으로 바꾸어라
+        //switch()인자값에는 정수와 문자열
+        var grade;
+        switch(parseInt(score/10)){
+            case 10: grade = "A";break;
+            case 9: grade = "A";break;
+            case 8: grade = "B";break;
+            case 7: grade = "C";break;
+            case 6: grade = "D";break;
+            default: grade = "F";break;
+        }
+        alert("당신의 점수는 " + score + "점이고, 학점은 " + grade + "입니다. ")
+    </script>
+</body>
+</html>

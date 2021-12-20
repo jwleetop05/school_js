@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>typeof 연산자와 형변환 함수</title>
+</head>
+<body>
+     <h3>typeof 연산자와 형변환 함수</h3>
+     <script>
+         console.log("--- 1.typeof 연산자와 데이터타입 확인 ---");
+         console.log(typeof "john");
+         console.log(typeof 3.14);
+         console.log(typeof NaN);//Number 타입, Not a Number
+         console.log(typeof false);//boolean
+         console.log(typeof null);//object
+         console.log(typeof undefined);//undefined
+         console.log(typeof [1, 2, 3, 4]); // object
+         console.log(typeof function(){}); //function
+         console.log(typeof myCar); //undefined
+
+         console.log("--- 2. 자동 형 변환 ---");
+         console.log(7 + null); // 7
+         console.log("7" + null); // 7null
+         console.log("7" + 2); // 72
+         console.log(2 + "7"); // 27
+         console.log("7" - 2); // 5
+         console.log(2 - "7"); // -5
+         console.log("7" * "2"); // 14
+         console.log("7" / "2"); // 3.5
+         console.log("seven" + 2); // seven2
+         console.log("seven" - 2); // NaN
+         console.log("seven" * 2); // NaN
+         console.log("seven" / 2); // NaN
+
+         console.log("--- 3. 형 변환 함수 ---");
+         // 1. 숫자와 변환 함수: Number():정수,실수 모두, parseInt():정수만 , parseFloat():실수만
+         // 2. 불린형 변환 함수: Boolean()
+         // 3. 문자열 변환 함수 : 값.String()
+        var num1 = 3.14, num2 = 20, num3 = 100, num4 = 0;
+        var str1 = "58",str2 = "3.678",str3 ="javascript";
+        var b1 = true , b2 = false;
+         console.log(str1 + num1);//583.14 , 문자열 연결
+         console.log(Number(str1) + num1);// 61.14 , 계산
+         console.log(parseInt(str1) + num1);// 61.14 , 계산
+         console.log(parseInt(str2) + num2);// 23 , 20 + 3
+         console.log(Number(str2) + num2);// 23.678 , 20 + 3.678
+         console.log(Number(str1) + num2);// 78 , 58 + 20
+         console.log(num2 + num3); // 120
+         console.log(num2 + num3.toString());//20100
+         console.log(Boolean(num2) + num3); // 101 , true 값을 산술연산하면 1로 취급
+         console.log(Boolean(num4) + num3); // 100 , false 값을 산술연잔하면 0으로 취급
+         console.log(Boolean(num2) + num3.toString()); // true100
+         console.log(str1 + b1);//58true
+         console.log(str1 + Number(b1));//581
+         console.log(Number(str1) + Number(b1));// 58 + 1 =59
+     </script>
+</body>
+</html>

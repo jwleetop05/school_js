@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event 속성</title>
+    <style>
+        div{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            display: inline-block;
+            border-radius: 50%;
+        }
+        #b1{
+            background-color: skyblue;
+        }
+        #b2{
+            background-color: red;
+        }
+        #b3{
+            background-color: green;
+        }
+        #b4{
+            background-color: blue;
+        }
+        #b5{
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        var str1 = "꽝! 다음을 기약하세요!";
+        var str2 = "당첨! 축하드립니다!";
+    </script>
+</head>
+<!--
+1. 이벤트(event)의 정의
+- 사용자의 마우스 클릭, 키보드 입력, 이미지 파일 로딩 등과 같이
+웹문서를 로드한 웹브라우저에서 발생하는 어떤 동작이나 상태의 변화를 나타내는 것
+
+2. 이벤트의 종류
+-1) 마우스 관련
+-- Click 이벤트 : onclick 속성, 마우스를 클릭했을 떄 발생하는 이벤트
+-- mouseover 이벤트 : 마우스를 해당 영역 위에 올려 놓았을 때 발생하는 이벤트 , mouseover 속성
+-- mouseleave 이벤트 : 마우스가 해당 영역에서 빠져 나왔을 때 발생하는 이벤트 , mouseleave 속성  
+-2) 키보드 관련
+-- keypress 이벤트 : 키보드를 눌렀을 때 발생하는 이벤트, onkeypress 속성
+-- keyup 이벤트 : 키보드를 땟을 때 발생하는 이벤트 , onkeyup 속성
+-3) 웹문서 관련
+-- load 이벤트 : 이미지 파일 또는 웹문서가 웹브라우저로 로드되었을때 발생하는 이벤트, onload 속성
+-- resize 이벤트 : 사용자가 웹 브라우저 창의 크기를 변경했을때 발생하는 이벤트, onresize 속성
+-4) 폼 관련
+-- change 이벤트 : input 태그에 입력값이 변경되었을 때 발생하는 이벤트, onchange 속성
+-- focus 이벤트 : input 태그에서 커서를 가졌을 때 발생하는 이벤트, onfocus 속성
+-->
+<body>
+    <h3>mouseover,mouseleaver 이벤트 처리</h3>
+    <!-- 인라인 자바스크립트-->
+    <img src="./images/lightoff.png" width="200" onmouseover="this.src='images/lighton.png'" onmouseleave="this.src='images/lightoff.png'">
+
+
+    <h3>mouseClick 이벤트 처리</h3>
+    <p>경품 추첨! 원하는 공을 클릭하세요!</p><br>
+    <div id="b1" onclick="document.write(str1)"></div>
+    <div id="b2" onclick="document.write(str1)"></div>
+    <div id="b3" onclick="document.write(str1)"></div>
+    <div id="b4" onclick="document.write(str2)"></div>
+    <div id="b5" onclick="document.write(str1)"></div>
+</body>
+</html>
