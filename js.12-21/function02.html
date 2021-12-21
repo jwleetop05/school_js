@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수의 활용</title>
+</head>
+<body>
+    <h3>변수의 활용 - 지역변수와 전역변수</h3>
+    <script>
+        var a = "globlaA", b = "globlaB", c = "globlaC"//전역변수
+        
+        function f1(){
+            var b  = "localB", d = "localD";// 지역변수 : 함수 안에서만 사용가능한 변수
+            console.log("--- 1. 함수 내부 ---")
+            console.log("a = " + a)
+            console.log("b = " + b)//지역변수와 전역변수가 같은 이름일때는 자신의 영역안에있는 수를 먼저 취급한다
+            console.log("전역변수 b = " + this.b)//this.를 사용하면 전역변수b를 사용할수있다
+            console.log("c = " + c)
+            console.log("d = " + d)
+        }
+
+
+        f1();
+
+        console.log("--- 2. 함수 외부 ---")
+        console.log("a = " + a); //전역변수
+        console.log("b = " + b); //전역변수
+        console.log("c = " + c); //전역변수
+        // console.log("d = " + d); //에러 사용 불가
+
+        
+    </script>
+</body>
+</html>

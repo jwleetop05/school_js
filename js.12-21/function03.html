@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수의 응용</title>
+    <style>
+        #gallery{
+            width: 600px;
+            text-align: center;
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            background: hotpink;
+            color: pink;
+            border: none;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <h3>함수를 활용한 이미지 갤러리 만들기</h3>
+    <div id = "gallery">
+        <p><img src="./images/jeju01.jpg" width="500" id="photo"></p>
+        <p>
+            <button onclick="moveImage(0)">이전</button>&emsp;
+            <button onclick="moveImage(1)">다음</button>
+        </p>
+    </div>
+    <script>
+        //이미지의 배열을 만들자
+        var Images =["jeju01.jpg","jeju02.jpg","jeju03.jpg","jeju04.jpg","jeju05.jpg","jeju06.jpg","jeju07.jpg","jeju08.jpg"];
+        //이미지를 변경하는 함수
+        var num = 0;
+        function moveImage(x){
+            if(x){//다음 이미지 처리
+                if(num == Image.length-1){
+                    alert("마지막 시작입니다.")
+                    return;
+                }
+                num++
+            }else{ // 이전 이미지 처리
+                if(num == 0){
+                    alert("처음 사진입니다.")
+                    return
+                }
+            }
+            //2번방법 : 0번에서 이전을 누르면 7번 7번에서 다음을 누르면 0번으로 가게 연결함
+            // function moveImage(x){
+            // if(x){
+            //     num++
+            //     if(num == Images.length){
+            //         num = 0;
+            //     }
+            // }else{
+            //     num--
+            //     if(num == -1){
+            //         num = Images.length-1
+            //     }
+            // }
+            // document 객체에서 id값을 받아서 처리하는 함수
+            // getElementById()
+            // setAttribute() = 태그의 속성을 변경하는 메소드
+            var imgTag = document.getElementById("photo");
+            imgTag.setAttribute("src" , "Images/" + Images[num]);
+
+        }
+    </script>
+</body>
+</html>

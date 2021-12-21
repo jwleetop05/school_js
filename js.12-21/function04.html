@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수의 활용</title>
+</head>
+<body>
+    <h3>함수의 활용</h3>
+    <script>
+        // 1. 함수의 인수에대한 느슨한 검사 : 매개변수 갯수가 일치하지 않아도 됨.
+        f1(10,20,30)
+        console.log("----------")
+        f1(40,50)
+        console.log("----------")
+        f1(60,70,80,90)
+        console.log("----------")
+
+        //2.함수 변수의 호이스팅(hoisting)
+        //hoist : 끌어당기다.
+        // 호이스팅(hoisting) : 함수나 변수에 대해서 사용하는 시점에는 없으나 뒤에 만들어진것을 끌어당겨서 사용하는것을말한다
+        // 함수의 호이스팅
+        f1(11,22,33)
+
+        console.log("----------")
+        var a = 44;
+        f1(a,b)//값을 가져오지는 못하지만 변수의 호이스팅이다
+
+        var b = 55;
+        function f1(x, y, z){
+            console.log("첫번째 숫자 : " + x)
+            console.log("두번째 숫자 : " + y)
+            console.log("세번째 숫자 : " + z)
+        }
+        // 함수의 호이스팅은 기본 함수에서만 가능하고, 익명함수에서는 불가능하다
+        // console.log(f2(100,90,30))
+        var f2 = function(x,y,z){
+            console.log("첫번째 숫자 : " + x)
+            console.log("두번째 숫자 : " + y)
+            console.log("세번째 숫자 : " + z)
+        }
+        console.log("-----------")
+        console.log(f2(100,90,30))
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수의 활용</title>
+</head>
+<body>
+    <h3>자바스크립트의 다양한 함수 생성 방법</h3>
+    <script>
+        // 1. 기본 함수
+        function f1(a,b){
+            return a+b;
+        }
+        console.log(f1(43,40))
+        console.log("----------")
+        // 2.  익명 함수(anonymous funtion): 이름이 없는 함수 함수에 이름이 없으므로 변수에 대입하여 사용
+        var f2 = function(a, b){
+            return a+b;
+        }
+        console.log(f1(43,40))
+        // 3. 즉시 사용 함수: 익명 함수를 활용하여 생성과 동시에 호출을 하여 사용하도록 만든 함수
+        var f3 = (function(a,b){
+             return a + b;
+        }(50,60));
+        console.log(f3)
+        // 4.람다식 함수(화살표 함수): 익명 함수를 화살표를 이용하여 간단하게 표현하는 함수
+        var f4 = (a,b) => a+b;
+        console.log(f4(10,20))
+
+        // 5.콜백 함수(callBack funtion)
+        // 함수가 다른 함수의 매개변수로 사용되는 함수로 이때 매개변수는 익명함수로 정의되어있다
+        function f5(call, n){
+            console.log("콜백 함수를 " + n  + "번 호출함")
+            for(i = 0; i < n;i++){
+                call();
+            }
+        }
+        var f6 = function(){
+            console.log("Welcome to Javascript")
+        }
+        f5(f6, 5)
+    </script>
+</body>
+</html>

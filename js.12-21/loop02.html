@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 연습</title>
+</head>
+<body>
+    <h3>반복문 연습 : while, do ~ while</h3>
+    <script>
+        /* 
+        < while문 기본 구조 >
+        
+        초기값;
+        while(조건식){
+            실행문;
+            증감값
+        }
+        */
+        // 1부터 10까지 의 수를 출력하시오
+        // console.log("--- 1번 while문 ---")
+        // let i = 1;
+        // while ( i <= 10){
+        //     console.log(i);
+        //     i++;
+        // }
+
+        /*
+        do ~ while 
+        초기값
+        do{
+            실행문;
+            증감값;
+        } while(조건식);
+
+        */
+    //    console.log("--- 2번 do ~ while문 ---")
+    //    let j = 1,sum = 0;
+    //    do{
+    //        console.log(j);
+    //        sum+=j
+    //        j++;
+    //    }while(j<=10)
+    //    console.log("1부터 10까지 수의 합은 : " + sum)
+       //4번 : 1부터 100까지의 합을 출력하시오
+       console.log("--- 4번 ---")
+        var sum = 0, i = 1;
+        while(i<= 100){
+            sum += i;
+            i++;
+        }
+        console.log("1부터 100까지의 합은 : " + sum)
+        console.log("--- 4번 do ~ while ---")
+        var sum = 0, i = 1;
+        do{
+            sum+= i;
+            i++;
+        }while( i <= 100)
+        console.log("1부터 100까지의 합은 : " + sum)
+        //5번 : 1부터 100까지의 수중에 짝수를 출력하시오
+        console.log("--- 5번 ---")
+        var i = 1;
+        while(i <= 100){
+            if(i % 2 == 0){
+                console.log("1부터 100 사이의 짝수는 : " + i)
+            }
+            i++
+        }
+        console.log("--- 5번 do ~ while ---")
+        var i = 1;
+        do{
+            if(i % 2 == 0){
+                console.log("1부터 100 사이의 짝수는 : " + i)
+            }
+            i++
+        }while(i <= 100)
+        // 6번 : 1부터 100까지의 수중에 3의 배수를 출력하시오
+        console.log("--- 6번 ---")
+        var i = 1;
+        while(i <= 100){
+            if(i % 3 == 0){
+                console.log("1부터 100까지의 수중에 3의 배수는 : "  + i)
+            }
+            i++
+        }
+        console.log("--- 6번 do ~ while ---")
+        var i = 1;
+        do{
+            if(i % 3 == 0){
+                console.log("1부터 100까지의 수중에 3의 배수는 : "  + i)
+            }
+            i++ 
+        }while(i <= 100)
+        // 7번 : 1부터 100까지의 수중에 3의 배수 이면서 4의 배수인것을 찾으시오
+        console.log("--- 7번 ---")
+        i = 1;
+        while(i <= 100){
+            if(i % 3 == 0 && i % 4 == 0){
+                console.log("1부터 100까지의 수중에 3의 배수 이면서 4의 배수인것은 : " + i)
+            }
+            i++
+        }
+        console.log("--- 7번 do ~ while ---")
+        i = 1;
+        do{
+            if(i % 3 == 0 && i % 4 == 0){
+                console.log("1부터 100까지의 수중에 3의 배수 이면서 4의 배수인것은 : " + i)
+            }
+            i++
+         }while(i <= 100)
+    </script>
+</body>
+</html>

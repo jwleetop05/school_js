@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열의 응용</title>
+</head>
+<body>
+    <h3>배열의 응용</h3>
+    <script>
+        var scores = new Array(); //빈 1차원 배열 생성
+        var subject = "java"
+
+        // 자바스크립트의 인덱스는 : 숫자 인덱스(0번 부터 시작하는것), 문자열 인덱스 : 문자열을 인덱스로 사용함
+        //이 두가지 인덱스는 따로 저장되고, 처리함.
+        scores["web"] = 75;
+        scores[subject] = 92;
+        scores["project"] = 85;
+
+        console.log(scores);//length가 0이 나온다
+        console.log("배열의 크기는 : " + scores.length)
+        //기본 for문으로는 배열의 문자열 인덱스로 저장된 값을 확인할 수 없다.
+        //기본 for문은 숫자 인덱스에만 사용함
+        for(var i = 0; i < scores.length; i++){
+            console.log(scores[i])
+        }
+        console.log(scores['web'])
+        console.log(scores['java'])
+        console.log(scores['project'])
+        console.log("----------")
+        //for-in문은 배열의 문자열 인덱스로 저장된 값을 확인할 수 있다.
+        //for-in문은 숫자 인덱스와 문자의 인덱스에 모두 사용 가능하다.
+        for(var i in scores){
+            console.log(scores[i])
+        }
+        console.log("---------")
+
+        var season = ["봄","여름","가을","겨울"];// 숫자 인덱스, 0, 1, 2, 3
+        season["mar"] = "춘곤기";// 문자열 인덱스
+        season["sep"] = "환절기";// 문자열 인덱스
+
+        //기본 for문 : 문자열 인덱스의 값은 확인불가
+        for(var i = 0; i < season.length; i++){
+            console.log(season[i])
+        }
+        console.log("------------")
+        // for - in문: 숫자 인덱스와 문자열 인덱스의 값 모두 확인가능,
+        //순서는 숫자인덱스 다음에 문자열 인덱스의 값이 출력
+        for(var i in season){
+            console.log(season[i])
+        }
+        //숫자 인덱스의 크기만 확인가능
+        console.log("크기 : " + season.length )
+        console.log("------------")
+        console.log(season[0] + ", " + season["mar"] + ', ' + season[1] + ", "+ season[2] + ", " +season["sep"] + ", " + season[3])
+    </script>
+</body>
+</html>

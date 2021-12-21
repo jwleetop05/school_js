@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복문 활용</title>
+</head>
+<body>
+    <h3>반복문 활용 - 3가지 반복문 활용 문제</h3>
+    <script>
+        //while문 : 반복횟수를 파악하기 힘들때
+        //for문 : 반복횟수를 파악하고있을때
+        let sum = 0, i = 1;
+        while(sum + i< 100000){
+            sum += i
+            i++
+        }
+        console.log("i의 값은 : " + i + " sum 의 값은 : " + sum)
+        sum = 0; i = 1;
+        do{
+            sum += i
+            i++ 
+        }while(sum + i <= 100000)
+        console.log("i의 값은 : " + i + " sum 의 값은 : " + sum)
+        i = 1;
+        for(let sum = 0; sum + i < 100000; i++){
+            sum += i
+        }
+        console.log("i의 값은 : " + i + " sum 의 값은 : " + sum)
+    </script>
+</body>
+</html>
