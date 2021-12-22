@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 활용</title>
+    <style>
+        img{
+            display: block;
+            margin: auto;
+        }
+        button{
+            background-color: hotpink;
+            height: 30px;
+            width: 70px;
+            border: none;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        문제) 버튼 1개를 사용하여 점등과 소등을 한다
+    -->
+    <h3>자바스크립트를 사용하여 전구 점등/소등 하기</h3>
+    <img src="images (1)/lightoff.png" width="100" id="light"><br>
+    <button onclick="changeToggle()" id="word">On</button>
+    <script>
+        var a = document.getElementById("light");
+        var b = document.getElementById("word")
+        let i = true
+        var changeToggle = () =>{
+            if(i){
+                a.src = "images (1)/lighton.png"
+                a.style.width = "500px"
+                b.innerText = "OFF"
+                i = false
+            }else{
+                a.src = "images (1)/lightoff.png"
+                a.style.width = "100px"
+                b.innerText = "ON"
+                i = true
+            }
+        }
+    </script>
+</body>
+</html>

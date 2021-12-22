@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 활용</title>
+</head>
+<body>
+    <!--
+    버튼을 클릭했을때,
+    이제부터는 자바스크립트를 공부합니다! 라는 텍스트 출력
+    js.png가 나타나고,
+    "즐겁게 공부하도록 합시다"  
+    -->
+    <h2>web Programming</h2>
+    <p id="p" >지금까지 HTML5/CSS3를 공부하였습니다.</p>
+    <button onclick="changeContent()">Next</button>
+    <script>
+        function changeContent(){
+            var obj1 = document.getElementById("p");
+            obj1.innerHTML ="이제부터는 자바스크립트를 공부합니다!<br>"
+            obj1.innerHTML += "<img src='./images (1)/js.PNG' width='100' height = '500'><br>"
+            obj1.innerHTML += "즐겁게 공부하도록 합시다"
+            
+            
+        }
+    </script>
+</body>
+</html>

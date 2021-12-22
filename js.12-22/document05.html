@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 활용</title>
+    <style>
+        #b1{
+            width: 200px;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h3>
+        <h3>document 객체의 다양한 속성 사용</h3>
+        <div id="b1">자바스크립의 활용</div>
+        <button onclick="changeStyle()">스타일 변경</button>
+        <script>
+            var changeStyle = () =>{
+                var divTag = document.querySelector("#b1")
+                //divTage의 속성값 변경
+                divTag.style.color = "red"
+                divTag.style.backgroundColor = "cyan"
+                divTag.style.width = "400px"
+                divTag.style.height = "200px"
+                divTag.style.fontSize = "2em"
+                divTag.style.fontWeight = "bold"
+                divTag.style.fontSize = "italic"
+                divTag.style.border = "5px dotted red";
+                divTag.style.borderRadius = "20%"
+                divTag.style.boxShadow = "5px -5px 10px darkgray"
+                
+            }
+        </script>
+    </h3>
+</body>
+</html>

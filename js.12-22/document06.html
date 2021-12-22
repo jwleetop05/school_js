@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 활용</title>
+    <style>
+        /*
+        이미지를 보이지 않게 하는 2가지 방법
+            display: none;          -> 영역을 차지하지 않음
+            visibility: hidden;     -> 영역을 차지하지만 보이지않음
+        */
+        /* #answer{
+            display: none;
+            
+        } */
+        #answer{
+            visibility: hidden;
+            /* display: none; */
+        }
+    </style>
+</head>
+<body>
+    <h3>[문제] 동적 웹페이지를 작성할 때 사용하는 언어는?</h3>
+    <button onclick="answer()">정답</button><hr>
+    <img src="images (1)/js.PNG" width="100" id="answer">
+    <script>
+        var b = document.querySelector("#answer")
+        var answer = () => {
+            b.style.visibility = "visible"; 
+            // b.style.display = "block"; 
+        }
+    </script>
+</body>
+</html>

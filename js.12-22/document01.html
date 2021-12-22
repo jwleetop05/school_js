@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 객체</title>
+    <style>
+        #img1{
+            width: 150px;
+            height: 150px;
+        }
+        
+    </style>
+</head>
+<!--
+DOM 프로그래밍의 기능
+- 1) h1 , p 등과 같은 HTML 태그 요소의 태그내용을 참조 및 변경
+- 2) img의 src, a의 href 속성 등과 같은 HTML 요소의 속성값을 변경
+- 3) color, backgroundColor 등과 같은 css 스타일을 지정
+- 4) ul, ol 등의 항목을, 추가 삭제 등과 같은 HTML, 요소의 추가 변경
+- 5) img의 src의 속성값의 연속적인 변경 등과 같은 애니메이션 효과를 구현할수있다
+
+-->
+<body>
+    <img src="./images (1)/html5.PNG" id="img1">
+    <span id="txt1">HTML5</span>
+    <hr>
+    <button onclick="change()">속성 변환</button>
+    <script>
+        //이미지 속성을 변경하는 함수
+        function change(){
+            var obj1 = document.getElementById("img1");
+            var txt1 = document.getElementById("txt1");
+            // 텍스트 변경
+            // innerHTML = html의 태그를 적용함
+            // innerText = html의 태그를 적용하지 않음
+            txt1.innerHTML = "<h1>Javascript</h1>";//text문구 변경
+            txt1.innerText = "Javascript"
+            //1. 속성을 변경하는 작업 : setter
+            txt1.style.backgroundColor = "gray";
+            txt1.style.color = "red";// 글짜 색깔 변경
+            obj1.src = "./images (1)/js.PNG";// 이미지 파일 변경
+            // obj1.style.width = "75px";//스타일 너비 변경
+            // obj1.style.height = "75px";// 스타일 높이 변경
+
+            //텍스트 변경 : 메소드를 통해 변경
+            // 속성의 변경시에는 메소드보다는 속성값으로 직접 변경하는 것을 권장
+            txt1.setAttribute("style" , "color: red; font-size : 0.5em;");
+
+            //2. 값을 출력하는 방법 : getter
+            // document.write(txt1.innerHTML)
+            //3.자바스크립트 문법 참고 사이트
+            //www.w3schools.com
+        }
+    </script>
+</body>
+</html>

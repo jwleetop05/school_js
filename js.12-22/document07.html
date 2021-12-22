@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 활용</title>
+    <style></style>
+</head>
+<body>
+    <h3>코로나가 끝나면 여행하고 싶은 지역</h3>
+    여행하고 싶은 지역 : <input type="text" id="txt1">&emsp;
+    <button onclick="inputPlace()">추가</button><hr>
+    <ul id = "txt2">
+       
+    </ul>
+    <script>
+        let inputPlace = () =>{
+            var txt1 = document.getElementById("txt1");
+            var txt2 = document.getElementById("txt2");
+
+            // 1단계 : 태그 생성 
+            var newPlace = document.createElement("li");
+            // 2단계 : 태그 안에 들어갈 텍스트 생성
+            var placeNode = document.createTextNode(txt1.value);
+            // 3단계 : 태그에 텍스트를 부착
+            newPlace.appendChild(placeNode);
+            // 4단계 : 부모 태그 안에 자식 태그를 부착
+            txt2.appendChild(newPlace);
+
+            //추가 하면 input 상자안에 있던 내용 초기화 지우고 입력상자에 커서를 다시집어넣겠다
+            txt1.value = "";
+            txt1.focus();
+            
+        }
+    </script>
+</body>
+</html>

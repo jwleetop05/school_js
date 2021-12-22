@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 활용</title>
+</head>
+<body>
+    <h3>버튼을 클릭하면 음표가 추가됩니다.</h3>
+    <button onclick="insertMusic(1)">음표1</button>&emsp;
+    <button onclick="insertMusic(0)">음표2</button><br><hr>
+    <div id="b1"></div>
+    <p>즐겁게 공부합시다</p>
+    <script>
+        let insertMusic = (x) =>{
+            var b = document.getElementById("b1");
+            var image1 = document.createElement("img")
+            if(x){
+                image1.setAttribute('src','images (1)/m1.PNG')
+            }else{
+                image1.setAttribute('src','images (1)/m2.PNG')
+            }
+            b.appendChild(image1)
+
+        }
+    </script>
+</body>
+</html>

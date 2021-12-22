@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 활용</title>
+</head>
+<body>
+    <h3>자바스크립트를 사용하여 전구 점등/소등하기</h3>
+    <button onclick="change(1)">전구켜기</button>
+    <img src="images (1)/lightoff.png" width="100" id = "light">
+    <button onclick="change(0)">전구끄기</button>
+    <script>
+        //1번 방법
+        /*
+        function changeon(){
+            var a = document.getElementById("light");
+            a.src = "images (1)/lighton.png "
+            a.style.width = "500px" 
+        }
+        function changeoff(){
+            var a = document.getElementById("light");
+            a.src = "images (1)/lightoff.png"
+            a.style.width = "100px"
+        }
+        */
+       //2번 방법
+    //    function change(x){
+    //     var a = document.getElementById("light");
+    //         if(x !== 0){
+    //             a.src = "images (1)/lighton.png"
+    //         }else{
+    //             a.src = "images (1)/lightoff.png"
+    //         }
+    //    }
+    //    var change = function(x){
+    //     var a = document.getElementById("light");
+    //         if(x !== 0){
+    //             a.src = "images (1)/lighton.png"
+    //         }else{
+    //             a.src = "images (1)/lightoff.png"
+    //         }
+    //    }
+       var change = x =>{
+        var a = document.getElementById("light");
+            if(x !== 0){
+                a.src = "images (1)/lighton.png"
+            }else{
+                a.src = "images (1)/lightoff.png"
+            }
+       }
+    
+    </script>
+</body>
+</html>

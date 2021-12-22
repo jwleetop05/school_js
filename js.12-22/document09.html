@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>김연아 회전</h3>
+    <input type="text" id="txt">&emsp;
+    <button onclick="turn()">회전</button>
+    <div id="fdzz"></div>
+    <script>
+        let fd = document.getElementById("fdzz");
+        let t = document.getElementById("txt");
+        var p = parseInt(document.createTextNode(t.value));
+        var image = ["f1.png","f2.png","f3.png","f4.png","f5.png","f6.png","f7.png"]
+        
+        let turn = () =>{
+            for(let i = 0; i < p ; i++){
+                for(let i in image){
+                    fd.appendChild(i)
+                }
+            }
+        }
+    </script>
+</body>
+</html>

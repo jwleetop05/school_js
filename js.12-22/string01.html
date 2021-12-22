@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 메소드</title>
+</head>
+<body>
+    <h3>문자열 메소드</h3>
+    <script>
+        var str1 = "Welcome to Javascript!";
+
+        // 1. charAt() : 인덱스에 해당하는 한 문자를 가져옴
+        console.log(str1.charAt(11))
+        // 2. indexof() : 문자(열)에 대한 인덱스를 구함
+        console.log(str1.indexOf("a"));
+        console.log(str1.indexOf("Java"));
+        console.log(str1.indexOf("java"));// -1, 문자(열)을 찾지못하였을때
+        // 3. lastIndexOf() : 문자(열)에 해당하는 인덱스를 끝에서 부터 접근함
+        console.log(str1.lastIndexOf("a"));
+        // 4. match() : 문자(열)에 해당하는 인덱스를 시작에서부터 접근하여 객체형태를 구한다, 인덱스와 함께 부과 정보도 알려준다
+        // match() 는 문자(열)에 해당하는 인덱스를 구할때 없는 문자(열)이라면 null을 반환한다
+        console.log(str1.match("a"));
+        console.log(str1.match("Java"));
+        console.log(str1.match("java"));
+        
+        // 5. search() : 문자(열)을 찾아서 인덱스를 찾음, indexof() 와 같은 기능을 가진다
+        // 정규식 표현을 사용하여 좀더 효율적인 문자(열)을 찾을 수 있다
+        console.log(str1.search("to"));
+        console.log(str1.search("To")); // -1, 문자열을 찾지 못했을 때
+        
+        // 6. replace() : 문자열을 변경하는 메소드
+        console.log(str1.replace("!","?")); // 대입해주어야 최종적으로 변경이 된다
+        console.log(str1);
+        str1 = str1.replace("!", "?");
+        console.log(str1);
+
+        // 7. substring() : 문자열에서 특정 문자열을 추출하는 메소드
+        // 사용방법 1. substring(시작인덱스, 끝인덱스) : 주의 -> 끝 인덱스 포함하지않음
+        // var str2 = str1.substring(11, 20); // Javascrip, 20번은 미포함
+        var str2 = str1.substring(11, 21); // Javascript, 20번까지 포함
+        console.log(str2);
+
+        // 사용방법 2. substring(시작인덱스), 끝 인덱스를 생략하면 시작인덱스부터 문자열 끝까지 출력
+        var str3 = str1.substring(11);
+        console.log(str3);
+        console.log("----------")
+        // 8. slice() : 문자열을 특정 문자열을 추출하는 메소드
+        // slice(시작인덱스, 끝인덱스) : 주의 -> 끝 인덱스를 포함하지않는다
+        //var str4 = str1.slice(11, 20) Javascrip, 20번 미포함
+        var str4 = str1.slice(11, 21); // Javascropt, 20번 포함
+        console.log(str4);
+        var str4_1 = str1.slice(11, -1);// 시작 인덱스: 11번, 끝 인덱스 -1번(끝에서 첫번째)
+        console.log(str4_1);
+        var str4_2 = str1.slice(-14, -12);// 시작 인덱스 : -14번(끝에서 14번째), 끝 인덱스 -12(끝에서 12번째)
+        console.log(str4_2);
+        var str5 = str1.slice(11);
+        console.log(str5);
+
+        // 9. substr() : 문자열에서 특정 문자열을 갯수만큼 추출하는 함수
+        // substr(시작 인덱스, 추출할 문자 갯수)
+        var str6 = str1.substr(11, 4);
+        console.log(str6);
+        var str7 = str1.substr(11, 10);
+        console.log(str7);
+
+        // 10. split() : 문자열을 특정 구분자를 기준으로 분리하여 문자열의 배열을 생성하는 함수
+        var animals = "lion,elephant,leopard,cheetah,hyena,zeebra,giraffe,hippo";
+        var arr = animals.split(",");
+        console.log(arr)
+        for(let i = 0; i < arr.length; i++){
+            console.log(arr[i])
+        }
+        // 11. toLowerCase() : 영문자로 모두 소문자로 변경하는 메소드
+        var str8 = str1.toLowerCase();
+        console.log(str8)
+
+        // 12. toUpperCase() : 영문자를 모두 대문자로 변경하는 메소드
+        var str9 = str1.toUpperCase();
+        console.log(str9)
+
+        // 13. length : 문자열의 길이를 구하는 번수
+        console.log(str1.length);
+
+        // 14. concat() : 문자열을 결합하는 메소드
+        var a = "good ", b = "luck";
+        var str10  = a.concat(b); // a + b 문자열을 결합하는 연산자이다
+        console.log(str10);
+
+        // 15. trim() : 문자열의 앞뒤의 공백을 제거하는 메소드
+        var str11 = "     web      Programming            ";
+        var str12 = str11.trim();
+        console.log(str12);
+
+        // 16. charCodeAt() : 인덱스에 해당하는 문자의 아스키코드 출력
+        console.log(str1.charCodeAt(11));
+        console.log(str1.charCodeAt(12));
+
+        // 17. formCharCode() : 아스키 코드에 해당하는 문자를 반환
+        console.log(String.fromCharCode(66)); // 아스키 코드 66번에 해당하는 문자 B
+        console.log(String.fromCharCode(98)); // 아스키 코드 98번에 해당하는 문자 b
+        
+    </script>
+</body>
+</html>
