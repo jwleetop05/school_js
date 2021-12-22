@@ -8,19 +8,26 @@
 </head>
 <body>
     <h3>김연아 회전</h3>
-    <input type="text" id="txt">&emsp;
+    회전수 입력 : <input type="text" id="txt">&emsp;
     <button onclick="turn()">회전</button>
-    <div id="fdzz"></div>
-    <script>
+   
+    <div id="fdzz">
+    </div>
+    <script>        
+        let turn = () =>{
         let fd = document.getElementById("fdzz");
         let t = document.getElementById("txt");
-        var p = parseInt(document.createTextNode(t.value));
-        var image = ["f1.png","f2.png","f3.png","f4.png","f5.png","f6.png","f7.png"]
-        
-        let turn = () =>{
-            for(let i = 0; i < p ; i++){
-                for(let i in image){
-                    fd.appendChild(i)
+        var p = parseInt(t.value);
+        // console.log(p)
+        // var image = ["f1.png","f2.png","f3.png","f4.png","f5.png","f6.png","f7.png"]
+            for(let i = 0; i < p ; i++){              
+                for(let j = 1; j <= 7; j++){
+                    const img = document.createElement("img")
+                    //console.log(`./images (1)/f${j}.png`)
+                    img.setAttribute("src",`./images (1)/f${j}.png`)
+                    //console.log(ab)
+                    
+                    fd.appendChild(img)
                 }
             }
         }
