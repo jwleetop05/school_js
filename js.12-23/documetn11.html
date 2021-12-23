@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 객체 활용</title>
+    <style>
+        img{
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<!--
+    1) setAttribute(속성, 값) : 속성에 해당하는 값을 변경
+-- 문제점 : 하나의 태그에 여러 개의 setAttribute() 를 사용하면 마지막에 사용된것만 변경된다
+2) getAttribute(속성) : 속성에 해당하는 값을 얻어옴
+3) createElement(태그명) : 새로운 태그 노드를 생성함
+4) createTextNode(텍스트) : 새로운 텍스트 노드를 생성함
+5) appendChlid(자식 노드) : 부모 노드에 자식 노드를 추가한다
+6) removeChlid(자식 노드) : 부모 노드에서 자식 노드를 제거한다.
+7) replaceChlid(새로운 노드, 이전 노드) : 이전 노드를 새로운 노드로 대체함
+8) insertBefore(새로운 노드, 특성 노드) : 특성 노드의 형제 노드로 추가함
+-->
+<body>
+    <h3>웹브라우저의 종류</h3>
+    <div id="d1">
+        <img src="images (1)/wb1.PNG" width="50" height="50" id="wd1">
+        <img src="images (1)/wb2.PNG" width="50" height="50" id="wd2">
+        <img src="images (1)/wb3.PNG" width="50" height="50" id="wd3">
+        <img src="images (1)/wb4.PNG" width="50" height="50" id="wd4">
+        <img src="images (1)/wb5.PNG" width="50" height="50" id="wd5">
+        <img src="images (1)/wb6.PNG" width="50" height="50" id="wd6">
+    </div><br><hr>
+    <button onclick="removeNetscape()">넷스케이프 삭제</button>&emsp;
+    <button onclick="replaceIt()">인터넷익스플로어 변경</button>
+    <script>
+        let flag = true
+        function removeNetscape(){
+            var d1 = document.getElementById("d1")
+            var wd2 = document.getElementById("wd2");
+            d1.removeChild(wd2)
+        }
+        function replaceIt(){
+            var d1 = document.getElementById("d1")
+            var wd1 = document.getElementById("wd1");
+            var img = document.createElement("img")
+            img.setAttribute("src",`./images (1)/wb10.png`)
+            d1.replaceChild(img, wd1)
+        }
+    </script>
+</body>
+</html>

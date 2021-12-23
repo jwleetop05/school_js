@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 객체 활용</title>
+</head>
+<!--
+DOM 객체 요소에 접근하여 반환하는 메소드
+1. getElementByID() : 선택한 id 속성값을 갖는 객체 요소를 반환. id는 1개로 유일함
+2. getElementByClassName() : 선택한 class 속성값을 갖는 객체 요소를 반환. class는 여러개가 될수있다
+3. getElementByName() : 선택한 name 속성값을 가진 객체 요소를 반환, name 여러개가 될수있음
+4. getElementByTagName() : 선택한 태그값을 가진 객체 요소를 반환, 태그명도 여러개가 될수있다
+5. querySelector() : 선택한 css 선택자를 만족하는 첫번째 객체 요소를 반환
+6. querySelectorAll() : 선택한 css 선택자를 만족하는 모든 객체 요소를 반환
+-->
+<body>
+    <!--
+        문제) 버튼을 클릭했을 때 일정한 시간마다 이미지가 회전하도록 프로그래밍 하시오
+    -->
+    <h3>웹브라우저의 종류</h3>
+    <div id="webbrowser">
+        <img src="images (1)/wb1.PNG" width="50" height="50" id="ie">
+        <img src="images (1)/wb2.PNG" width="50" height="50" id="Netscape">
+        <img src="images (1)/wb3.PNG" width="50" height="50" id="chrome">
+        <img src="images (1)/wb4.PNG" width="50" height="50" id="safari">
+        <img src="images (1)/wb5.PNG" width="50" height="50" id="opera">
+        <img src="images (1)/wb6.PNG" width="50" height="50" id="firefox">
+    </div>
+    <button onclick="moveImages()">회전 시작</button>
+    <script>
+
+        //웹브라우저를 회전하는 함수 - 익명함수
+        var moveImages = setInterval(() =>{
+            var wb = document.getElementById("webbrowser");
+            // NodeList 라는 배열 형태로 값을 반환함
+            var img = document.querySelectorAll("img");
+            wb.removeChild(img[0])
+            wb.appendChild(img[0])
+        },1000);
+    </script>
+</body>
+</html>

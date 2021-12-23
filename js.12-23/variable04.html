@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수의 선언 방법</title>
+</head>
+<!--
+1. 변수의 선언 방법 : var, let, const
+- var : 2015년까지는 사용
+- let,const : ES6(ECMAscript6)에서 2015년도에 발표됨.
+
+2. 세 가지 변수 선언 방법의 차이점
+1) var 변수 선언의 문제점
+- 변수의 중복 선언이 가능하여 예기치 못한 문제를 발생시킬수있다.
+- 함수 외부에서 선언한 변수는 모두 정적 변수를 사용함.
+- 변수 선언 이전에 변수를 참조하게되면 값이 언제나 undefined 
+
+2) let 
+- 변수의 중복 선언이 불가
+- 값의 변경은 가능
+
+3) const : 상수
+- 상수 : 한번 설정한 값을 변경하지 못함
+
+-->
+<body>
+    <script>
+        // a사용자의 a1 파일
+        // var x = 50;
+        // let x = 50;
+        const x = 50;
+        const x;
+        // b사용자의 b1 파일
+        var x = 70;//변수의 중복선언
+        let x = 70; // 에러 발생변수의 중복 선언 불가
+        x = 60; // 변수의 값을 변경
+
+        console.log(x)
+    </script>
+    
+</body>
+</html>

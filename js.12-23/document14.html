@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>2학기 중간 평가</h3>
+    <form name="infoform">
+        학과 : <input type="text" name="dept"><br>
+        이름 : <input type="text" name="name">
+    </form>
+    <h3>Q1. HTML5 프로그래밍에서 다루는 내용이 아닌것은?</h3>
+    <form name="q1form">
+        <input type="radio" name="q1" value="1">HTML<br>
+        <input type="radio" name="q1" value="2">CSS<br>
+        <input type="radio" name="q1" value="3">PHP<br>
+        <input type="radio" name="q1" value="4">Javascript<br>
+    </form>
+    <h3>Q2. 다음 중에서 그 성격이 다른 프로그램은?</h3>
+    <form name="q2form">
+        <input type="radio" name="q2" value="1">사파리<br>
+        <input type="radio" name="q2" value="2">파워포인트<br>
+        <input type="radio" name="q2" value="3">파이어폭스<br>
+        <input type="radio" name="q2" value="4">오페라<br>
+    </form>
+    <button onclick="computeScore()">채점(각 문제당 10점)</button>
+    <div id="result"></div><hr>
+
+    <script>
+        function computeScore() {
+            var answer = [3,2]; //정답
+            var chocie = []; //정답
+
+            // 폼에 접근하는 방법1
+            // var dept = document.infoform.dept.value;
+            // var name = document.infoform.name.value;
+            // chocie[0] = document.q1form.q1.value;
+            // chocie[1] = document.q2form.q2.value;
+
+            // 폼에 접근하는 방법2 -forms 배열로 접근하는 방법
+            // var dept = document.forms[0].dept.value; 
+            // var name = document.forms[0].name.value;
+            // chocie[0] = document.forms[1].q1.value;
+            // chocie[1] = document.forms[2].q2.value;
+            
+            // 폼에 접근하는 방법3 - form 안에 요소들은 elements 배열로 접근한다
+            var dept = document.forms[0].elements[0].value; 
+            var name = document.forms[0].elements[1].value;
+            chocie[0] = document.forms[1].q1.value;
+            chocie[1] = document.forms[2].q2.value;
+            
+            
+            var result = document.getElementById("result");
+            let score = 0;
+            
+            for(let i = 0; i < answer.length; i++){
+                if(answer[i] == chocie[i]) score += 10;
+            }
+            var txt = "학과 : " + dept + "<br>";
+            txt += "이름 : " + name + "<br>";
+            txt += "총점 : " + score + "점" + "<br>";
+
+            result.innerHTML = txt;
+        }
+    </script>
+</body>
+</html>

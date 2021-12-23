@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 객체의 활용</title>
+</head>
+<!--
+    애니메이션 효가
+    setInterval()
+-->
+<body>
+    <h3>자바스크립트를 활용한 디지털 시계</h3>
+    <h1 id="watch"></h1>
+
+    <script>
+        // function changeWatch(){
+        //     var watch = document.getElementById("watch")
+        //     var now = new Date();
+        //     var hour = now.getHours();
+        //     var minute = now.getMinutes();
+        //     var second = now.getSeconds();
+
+        //     var ampm = "";
+        //     if(hour < 12) ampm = "AM";
+        //     else ampm = "PM";
+        //     if(hour < 10) hour = "0" + hour;
+        //     if(minute < 10) minute = "0" + minute;
+        //     if(second < 10) second = "0" + second;
+        //     watch.innerHTML = ampm + " " + hour + " : " + minute + " : " + second
+
+        // }
+        // setInterval(changeWatch, 500) // mlile second : 1000 = 1
+
+        // 2 : setlnterval() 안에서 함수 생성
+        setInterval(() =>{
+            var watch = document.getElementById("watch")
+            var now = new Date();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+
+            var ampm = "";
+            if(hour < 12) ampm = "AM";
+            else ampm = "PM";
+            if(hour < 10) hour = "0" + hour;
+            if(minute < 10) minute = "0" + minute;
+            if(second < 10) second = "0" + second;
+            watch.innerHTML = ampm + " " + hour + " : " + minute + " : " + second
+        }, 500)
+
+    </script>
+</body>
+</html>

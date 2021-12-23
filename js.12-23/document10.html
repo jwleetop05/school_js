@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 활용</title>
+</head>
+<!--
+1. DOM 트리 조작 메소드
+1) setAttribute(속성, 값) : 속성에 해당하는 값을 변경
+-- 문제점 : 하나의 태그에 여러 개의 setAttribute() 를 사용하면 마지막에 사용된것만 변경된다
+2) getAttribute(속성) : 속성에 해당하는 값을 얻어옴
+3) createElement(태그명) : 새로운 태그 노드를 생성함
+4) createTextNode(텍스트) : 새로운 텍스트 노드를 생성함
+5) appendChlid(자식 노드) : 부모 노드에 자식 노드를 추가한다
+6) removeChlid(자식 노드) : 부모 노드에서 자식 노드를 제거한다.
+7) replaceChlid(새로운 노드, 이전 노드) : 이전 노드를 새로운 노드로 대체함
+8) insertBefore(새로운 노드, 특성 노드) : 특성 노드의 형제 노드로 추가함
+-->
+<body>
+    <h3>코로나가 종식되면 여행하고 싶은 지역</h3>
+    여행지역 : <input type="text" id="txt1">
+    <button onclick="insertPlace(1)">국내</button>&emsp;
+    <button onclick="insertPlace(0)">해외</button><br><hr>
+    <div id="d1">
+        <div>1. 국내 여행지</div>
+        <div id = "d2">2. 해외 여행지</div>
+    </div>
+    <script>
+        /*
+        태그를 생성하여 다른 태그의 자식 또는 형제로 추가하는 순서
+        1단계 : 태그 생성
+        2단계 : 텍스트 노드 생성
+        3단계 : 태그 노드에 텍스트 노드를 부착
+        4단계 : 태그 노드에 특정 태그에 자식 또는 형제 태그로 추가
+        */
+        var insertPlace = (target) => {
+            var d1 = document.getElementById("d1")
+            var txt1 = document.getElementById("txt1")
+            var d2 = document.getElementById("d2")
+            var p = document.createElement("div")
+            var placeNode = document.createTextNode(txt1.value);
+            p.appendChild(placeNode)
+            if(target){//국내 여행지
+                // 사용형식 : 부모태그.insertBefore(p, d2) d2의 이전으로 들어가돼 d1의 자식으로 들어간다
+                p.style.color = "blue";
+                d1.insertBefore(p, d2)
+                txt1.value ="";
+                txt1.focus();
+            }else{//해외 여행지
+                p.style.color = "purple"
+                d1.append(p)
+                txt1.value ="";
+                txt1.focus();
+            }
+        }
+    </script>
+</body>
+</html>

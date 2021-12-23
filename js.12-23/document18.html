@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 객체 이벤트 모델</title>
+</head>
+<body>
+    <h3>이벤트 모델의 이벤트 처리 비교</h3>
+    <hr>
+    인라인 이벤트 : <button onclick="eventHandler(event)" onmouseover="eventHandler2()">인라인 이벤트 발생</button><br><br>
+    고전 이벤트 : <button id="old">고전 이벤트 발생</button><br><br>
+    표준 이벤트 : <button id="standard">표준 이벤트 발생</button><br><br>
+    <hr>
+    <div id="result"></div>
+    <script>
+        // 1.인라인 이벤트 발생
+        function eventHandler(e){
+            var result = document.getElementById("result")
+            var output = e + " : " + e.type + " 이벤트가 발생함."
+            result.innerHTML =  output;
+        }
+        function eventHandler2(e){
+            var result = document.getElementById("result")
+            result.style.color = "red";
+        }
+        window.onload = function(){
+            //고전 이벤트 모델
+            var old = document.getElementById("old")
+            old.onclick = eventHandler;
+            old.onmouseover = eventHandler2;
+
+            //표준 이벤트 모델
+            var standard = document.getElementById("standard");
+            standard.addEventListener("click",eventHandler);
+            standard.addEventListener("mouseover",eventHandler2);
+        }
+    </script>
+</body>
+</html>

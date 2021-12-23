@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document 객체 이벤트 활용</title>
+</head>
+<!--
+< 자바스크립트 이벤트 처리 방법 >
+1. 인라인 이벤트 처리방법 - 거의 사용하지 않는 방법
+  <button onclick="readData()"></button>
+
+2. 고전 이벤트 처리 방법
+
+3. 표준 이벤트 처리 방법 - 결정하는 방법
+-->
+<body>
+    <h3>가장 좋아하는 과목을 선택하시오</h3>
+    <select name="subject" id="subject" >
+        <option value="데이터베이스" >데이터베이스</option>
+        <option value="알고리즘">알고리즘</option>
+        <option value="자료구조" selected>자료구조</option>
+        <option value="네트워크">네트워크</option>
+        <option value="운영체제">운영체제</option>
+        <option value="빅데이터">빅데이터</option>
+    </select>
+    <button id="btnSelect">선택완료</button><br><hr>
+    <div id="result"></div>
+    <script>
+        // 고전, 표준 이벤트 모델을 사용할 때 처리하는 방법
+        // 1. window.onload : 웹페이지의 동적인 변화를 반영할 수 있도록
+        // 2. 표준 이벤트 모델을 사용하는 이유 (addEventListener() 메소드를 사용하는 이유)
+        // - 하나의 객체에 여러 가지의 이벤트를 적용했을 때 고친 이펙트 모델은 마지막에 적용한 것만 실행된다
+        // - 표준 이벤트 모델은 addEventListener() 메소드를 사용하면 모두 실행됨
+
+        window.onload = function(){
+            var btnSelect = document.getElementById("btnSelect")
+            //2. 표준 이벤트 모델
+            // btnSelect.addEventListener("click",readData);
+            // function readData(){
+                // var subject  = document.getElementById("subject")
+                // var result = document.getElementById("result")
+                
+                // var txt = subject.options[subject.selectedIndex].value
+                // result.innerHTML = "선택과목: " + txt;
+            // }
+            //2-1.
+            btnSelect.addEventListener("click",function(){
+                var subject  = document.getElementById("subject")
+                var result = document.getElementById("result")
+                
+                var txt = subject.options[subject.selectedIndex].value
+                result.innerHTML = "선택과목: " + txt;
+            });
+             
+            //1. 고전 이벤트 모델
+            //1-1 함수정의 따로 한 경우
+            // btnSelect.onclick = readData;
+            
+            
+            // function readData(){
+            //     var subject  = document.getElementById("subject")
+            //     var result = document.getElementById("result")
+                
+            //     var txt = subject.options[subject.selectedIndex].value
+            //     result.innerHTML = "선택과목: " + txt;
+            // }
+                //1-2 익명함수
+            // btnSelect.onclick = function(){
+            //     var subject  = document.getElementById("subject")
+            //     var result = document.getElementById("result")
+                
+            //     var txt = subject.options[subject.selectedIndex].value
+            //     result.innerHTML = "선택과목: " + txt;
+            // }
+
+
+        }
+    </script>
+</body>
+</html>
